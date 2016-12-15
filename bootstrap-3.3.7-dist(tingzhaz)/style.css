@@ -1,0 +1,132 @@
+html, body
+{
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-weight: 300;
+  line-height: 1.5;
+}
+h1 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.25em;
+  margin: 5, 0, 5, 0;
+  color: cyan;
+  
+}
+<----------------||----------------Loading----------------||---------------->
+#loader {
+  z-index: 200;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: #F5F5F5;
+  opacity: 0;
+  transition: opacity 0.9s ease, left 0s ease 0.9s;
+}
+#loader.loading {
+  will-change: opacity, left;
+  left: 0;
+  opacity: 1;
+  transition: opacity 0.9s ease, left 0s ease 0s;
+}
+#spinner {
+  z-index: -1;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 4.8rem;
+  height: 4.8rem;
+  margin: -2.4rem 0 0 -2.4rem;
+  background: transparent url(img/spinner.svg) no-repeat center scroll;
+  background-size: cover;
+  opacity: 0;
+  transition: opacity 0.9s ease, z-index 0s ease 0.9s;
+}
+#spinner.fade {
+  will-change: opacity, z-index;
+  z-index: 200;
+  opacity: 1;
+  transition: opacity 0.9s ease, z-index 0s ease 0s;
+}
+#spinner.loading {
+  -webkit-animation: spin 0.3s linear infinite;
+      animation: spin 0.3s linear infinite;
+}
+  #spinner svg {
+    width: 4.8rem;
+    height: 4.8rem;
+  }
+  /*spin*/
+  @-webkit-keyframes spin {
+    from  {   -webkit-transform: rotate(0deg); transform: rotate(0deg);     }
+    to    {   -webkit-transform: rotate(360deg); transform: rotate(360deg);   }
+  }
+  @keyframes spin {
+    from  {   transform: rotate(0deg);  }
+    to    {   transform: rotate(360deg);  }
+  }
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-image: url("bp1.jpg");
+  background-position: center;
+  background-size: 100% 100%;
+  margin: 0;
+}
+
+a {
+  color: #204156;
+  text-decoration: none;
+}
+
+.page-title {
+  text-align: top-left;
+  font-weight: 90;
+}
+
+.page-description {
+  border: 1px solid #000;
+  margin: 2px;
+  text-align: center;
+  padding: 30px;
+}
+
+.gallery {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gallery-item {
+  margin: 20px;
+}
+
+.gallery-item .thumbnail {
+  border: 5px solid #fff;
+}
+
+/* FOOTER NAVIGATION */
+
+nav {
+  
+}
+
+nav li {
+  display: inline;
+  margin: 0;
+  padding: 0 10px;
+}
+
+nav ul {
+  position: fixed;
+    bottom: 1.0rem;
+    left: 0 rem;
+    margin: 0;
+    font-size: 1.6rem;
+  display: inline;
+}
+
